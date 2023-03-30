@@ -1,0 +1,12 @@
+#!/bin/bash
+
+find . -name "*DeshanimQuest*" -print0 | xargs -0 rm
+cp -r ~/Dev/Old_Godot3/DeshanimQuest/DeshanimQuest/webgl-build/* ~/Dev/Pages/test-dq/
+mv DeshanimQuest.html index.html
+
+
+if [ "$1" == "serve" ]
+then
+  bundle exec jekyll serve
+fi
+
